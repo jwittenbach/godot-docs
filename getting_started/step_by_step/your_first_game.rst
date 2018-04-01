@@ -403,12 +403,13 @@ also have an array containing the names of the three animations, which
 we'll use to select a random one.
 
 Now let's look at the rest of the script. In ``_ready()`` we randomly 
-choose one of the three animation types:
+choose one of the three animation types and then start the animation:
 
 ::
 
     func _ready():
         $AnimatedSprite.animation = mob_types[randi() % mob_types.size()]
+        $AnimatedSprite.play()
 
 .. note:: You must use ``randomize()`` if you want
           your sequence of "random" numbers to be different every time you run
@@ -619,36 +620,39 @@ ScoreLabel
 -  ``Layout``: "Center Top"
 -  ``Margin``:
 
-   -  Left: ``-25``
+   -  Left: ``-50``
    -  Top: ``0``
-   -  Right: ``25``
+   -  Right: ``50``
    -  Bottom: ``100``
 
 -  Text: ``0``
+-  Align: Center
 
 MessageLabel
 ~~~~~~~~~~~~
+
+-  ``Layout``: "Center"
+-  ``Margin``:
+
+   -  Left: ``-200``
+   -  Top: ``-100``
+   -  Right: ``200``
+   -  Bottom: ``100``
+
+-  Text: ``Dodge the Creeps!``
+-  Align: Center
+-  Autowrap: Enable
+
+StartButton
+~~~~~~~~~~~
 
 -  ``Layout``: "Center Bottom"
 -  ``Margin``:
 
    -  Left: ``-100``
-   -  Top: ``-200``
+   -  Top: ``-150``
    -  Right: ``100``
-   -  Bottom: ``-100``
-
--  Text: ``Dodge the Creeps!``
-
-StartButton
-~~~~~~~~~~~
-
--  ``Layout``: "Center"
--  ``Margin``:
-
-   -  Left: ``-60``
-   -  Top: ``70``
-   -  Right: ``60``
-   -  Bottom: ``150``
+   -  Bottom: ``-60``
 
 -  Text: ``Start``
 
